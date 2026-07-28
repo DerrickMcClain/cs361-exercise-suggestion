@@ -4,9 +4,9 @@ CS361 microservice that returns exercise recommendations over a REST API with JS
 
 ## Assigned teammates
 
-- Person 1
-- Person 2
-- Person 3
+- Derrick McClain
+- Tristin
+- Jacob
 
 ## Communication pipe
 
