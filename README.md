@@ -112,6 +112,25 @@ for exercise in exercise_data["exercises"]:
     print(exercise["name"])
 ```
 
+## UML sequence diagram
+
+How another program requests and receives exercise suggestions:
+
+```mermaid
+sequenceDiagram
+    actor Client as Requesting Program
+    participant API as Exercise Suggestion Microservice
+
+    Client->>API: GET /exercises?muscle_group=chest&equipment=dumbbells&difficulty=beginner
+    API->>API: Validate request parameters
+    API->>API: Search exercise data
+    API->>API: Filter by muscle group
+    API->>API: Filter by equipment
+    API->>API: Filter by difficulty
+    API->>API: Create JSON response
+    API-->>Client: JSON exercises list
+```
+
 ## How to run
 
 1. Python 3.10+
