@@ -90,6 +90,28 @@ curl "http://localhost:5001/exercises?muscle_group=toes"
 }
 ```
 
+## How another program receives data
+
+The response is JSON with three top-level keys:
+
+| Key | Meaning |
+|-----|---------|
+| `filters` | The filters that were applied to the request |
+| `count` | How many exercises matched |
+| `exercises` | A list of matching exercises |
+
+Each item in `exercises` has `name`, `muscle_group`, `equipment`, and `difficulty`.
+
+### Example code for receiving the data
+
+```python
+exercise_data = response.json()
+
+print("Number of exercises:", exercise_data["count"])
+for exercise in exercise_data["exercises"]:
+    print(exercise["name"])
+```
+
 ## How to run
 
 1. Python 3.10+
